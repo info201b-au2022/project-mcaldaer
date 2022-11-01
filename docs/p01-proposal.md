@@ -59,10 +59,12 @@ Each dataset contains varying amounts of data from varying timeframes. The Terry
 
 
 ### ***Expected Implications:***
-Proposal only. Assuming you answer your research questions, briefly describe the expected or possible implications for technologists, designers, and policymakers. (About 150 words.)
+Implications from the data would help policymakers realize that change needs to occur. If the data shows that there is bias in the police’s uses of force, such as towards various racial or gender groups, it would be important to address the issue through policies that would minimize the inequality in which police use force or stop citizens. The data also points towards trends that are occurring within the Seattle Police Department, and significant patterns that are found could be mitigated through ways such as designing new policies to help officers handle their duties with less bias to reduce undesirable outcomes related to inequality against different groups. The geographical spread, along with the data, could also indicate connections to where issues lead to the presence of police are occurring more prominently, and could help policymakers decide laws that would alleviate those issues, including crimes, which would then potentially help decrease inequality in police force towards civilians simultaneously.
+
 
 ### ***Limitations:***
-Proposal only. What limitations might you need to address? Briefly discuss. (About 150 words.)
+Limitations from the datasets that might need to be addressed is that some of the data is self-reported by the Seattle Police Department, and as a result, could lead to further bias in the data itself. Also, the data focuses on incidents of police force that occur within the city of Seattle, so the data alone would not be enough for analysis in regards to how the amounts of police uses of force in Seattle compare to the average amounts in other cities and locations, and in different states across the country. Other limitations include that the data notes if the officer’s actions were within policy or not, but does not describe what policies were involved or how the decision was made, which would have been useful to help make further conclusions on the uses of police force in regards to any instances of bias, and with the creation of new policies to carry out.
+
 
 ### ***Acknowledgements:***
 Thank you to my friend Kathryn Reyes who pointed us towards the [Police Data Initiative](https://www.policedatainitiative.org/) where we were able to locate our data files.
