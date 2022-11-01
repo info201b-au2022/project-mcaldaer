@@ -6,15 +6,17 @@
 
 *Code name:* SAMI
 
-# ***Project title***
+# ***Characterizing Seattle Police Department's (SPD) Civilian Interactions***
 
 ### ***Abstract:***
-Write a short abstract of three sentences. Your abstract should summarize your entire project, but only the very most important aspects. Here are two examples of how you might structure your abstract: **(1)** "Our main question is .... This question is important because .... To address the question, we will ...." and **(2)** "We are concerned with ..., because .... To address this concern, we plan to ...." |
+The primary aim of our research is to analyze trends in the ways the Seattle Police Department interacts with civilians. We are particularly interested in analyzing _who_ and _where_ SPD most frequently makes stops, arrests, or uses the violence. These questions are important because it will help us to identify racial or geographic disparities in SPD's policing practices. To address these questions we will analyze data provided by SPD related to Terry Stops, Use-of-Force, and Officer Involved Shootings (OIS).
 
 ***Keywords:*** police violence; seattle police department; racial justice; policing
 
 ### ***Introduction:***
-Briefly introduce your project. (About 150 words.)
+
+Law enforcement agencies are responsible for enforcing laws, maintaining public order, and managing public safety. In some situations, law enforcement officers may be allowed to use force in order to compel compliance by an unwilling subject or protect themselves or the public from dangerous. In the US, the police are allowed to briefly detain a person based on reasonable suspicion of criminal activity. This is called Terry stop. In our project, we will examine data from the Seattle Police Department and produce visualizations about the police interactions in Seattle and their correlation with race, gender, and geography. In addition to Terry Stops, we are also interested in police interactions where force is used or in more serious cases, a shooting occurs. Through our analysis we hope to reveal trends about SPD's use of force and potential racial or geographic biases.
+
 
 ### ***Problem Domain:***
 **The Problem:** Police violence, especially as of recent years, has become a growing concern in the United States. While a majority of instances of police violence go unrecognized or unreported, those that do gain national attention often spark outrage and protest amongst the general public (Police Scorecard, 2022). In the Summer of 2020, protests of this nature reached a peak following the unjust murder of George Floyd by Minneapolis Police Officer, Derek Chauvin (Carter, 2022). The city of Seattle became a hotspot for these demonstrations and gained nationwide media attention. While protests were sparked by the national movement against police brutality, these events also drew attention to local problems within the Seattle Police Department (Carter, 2022). Although the Seattle Times reported use of force by SPD has decreased substantially since the violent 2020 protests, findings from the Police Scorecard project show that there is still major work to be done within the SPD. Compared to other U.S. cities with populations >400,000, the SPD ranks 12th in terms of police shootings and 10th in terms of less lethal uses of force. Further, the project found SPD to exhibit more racial disparities in deadly force than 67% of U.S police departments (Police Scorecard, 2022). Key findings from a 2021 Center for Policing Equity report also support the idea that SPD exhibits concerning racial biases in their policing. With these facts in mind, we hope to both analyze and visualize data made available by the SPD to examine the department's self-reported use of force, racial disparities and the general trends of interaction between officers and civilians.
@@ -28,9 +30,20 @@ Briefly introduce your project. (About 150 words.)
 - _Harms_: Inaccurate or incomplete data has the potential to harm community members by resulting in false or inaccurate conclusions. Faulty conclusions may in turn lead policymakers or police departments to take the wrong actions, (or no action at all), in addressing problems concerning policing. Even with accurate data, well-intentioned, thought-out interventions may have unintended consequences or limitations that fail to address the problem or worse, exacerbate existing disparities or biases. For example, requiring officers to wear bodycams so that interactions are recorded can help increase accountability. However, this intervention only works if police actually wear and utilize cameras as intended, and make recording easily available.
 
 
-
 ### ***Research Questions:***
-Present your 3-5 research questions.  You should present each research question.  For each research question, you should discuss why it is important and what motivates the question. (About 50 words for each question, so for four questions you would write about 200 words or more if needed.)
+
+1. **What kinds of interactions or violence occur between police and civilians? What are the most common ones?**
+The question is important because civilians in Seattle should get informed about what kind of treatment they could get by the police when they are reasonably suspicious of criminal activity.
+
+2. **Analyze general demographics in Seattle.**
+This analysis is important because we could compare with the result for other research questions. We could check whether the distribution of police interactions in Seattle goes along with the general demographics such as race, gender, or geography. If there are deviations, we might conclude that there are other biases that affect the result.
+
+3. **How are police interactions in Seattle distributed across race and gender? Does it align with the general demographics? Or is there any bias?**
+Obviously, it is important that there should be no discrimination across race or gender. By this research question, we could figure out whether SPD discriminates against certain groups of people in their interactions.
+
+4. **How are police interactions in Seattle distributed geographically across the city? Does it align with the general demographics? Or is there any bias?**
+This question will reveal where in the city there is high frequency of police interaction. This question is important because it can help us understand where SPD may be over- or under-policing, and may also reveal policing biases related to race or other factors.
+
 
 ### ***The Dataset:***
 
@@ -59,7 +72,7 @@ Each dataset contains varying amounts of data from varying timeframes. The Terry
 
 
 ### ***Expected Implications:***
-Implications from the data would help policymakers realize that change needs to occur. If the data shows that there is bias in the police’s uses of force, such as towards various racial or gender groups, it would be important to address the issue through policies that would minimize the inequality in which police use force or stop citizens. The data also points towards trends that are occurring within the Seattle Police Department, and significant patterns that are found could be mitigated through ways such as designing new policies to help officers handle their duties with less bias to reduce undesirable outcomes related to inequality against different groups. The geographical spread, along with the data, could also indicate connections to where issues lead to the presence of police are occurring more prominently, and could help policymakers decide laws that would alleviate those issues, including crimes, which would then potentially help decrease inequality in police force towards civilians simultaneously.
+Implications from the data would help policymakers realize that change needs to occur. If the data shows that there is bias in the police’s uses of force, such as towards various racial or gender groups, it would be important to address the issue through policies that would minimize the inequality in which police use force or stop citizens. The data also points towards trends that are occurring within the Seattle Police Department, and significant patterns that are found could be mitigated through ways such as designing new policies to help officers handle their duties with less bias to reduce undesirable outcomes related to inequality against different groups. The geographical spread, along with the data, could also indicate connections to where issues leading to the presence of police are occurring more prominently, and could help policymakers decide laws that would alleviate those issues, including crimes, which would then potentially help decrease inequality in police force towards civilians simultaneously.
 
 
 ### ***Limitations:***
@@ -81,4 +94,4 @@ Thank you to my friend Kathryn Reyes who pointed us towards the [Police Data Ini
 <br/> **3.** Spd officer involved shooting (Ois) data | city of seattle open data portal. (n.d.). Retrieved October 31, 2022, from https://data.seattle.gov/Public-Safety/SPD-Officer-Involved-Shooting-OIS-Data/mg5r-efcm
 
 
-***Appendix A:*** Do you have questions for your TA or instructor?  Include them here.
+***Appendix A:*** We would like feedback on the quality of our brief, datasets, and proposed research aims. Is there anything you'd like us to revise or consider moving forward?
