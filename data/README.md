@@ -1,12 +1,14 @@
-# The `\data` Directory: Project Data Summary 
+# The `\data` Directory: Project Data Summary
 
 In our project, we use the following data files and Application Programming Interfaces:
 
 ## Data files (TODO: Update/delete for your PROJECT)
 |Data File Name | Brief Description|
 |---------------| -----------------|
-|[example.cvs](./example.csv) | This file contains temperature data. (See report for details.)
-|[another-file](./filename2.csv) | Description ... 
+|[SPD-Officer-Involved-Shooting-Data](./data/SPD_Officer_Involved_Shooting__OIS__Data.csv) | This file contains data on the SPD's officer involved shootings, where the incidents occurred, if officers were disciplined and followed policies, and related factors including age, race, and gender.
+|[Use-Of-Force](./data/Use_Of_Force.csv) | This file contains data on the SPD's use of force towards civilians, the levels of forced used, as well as details including race and gender.
+|[Terry-Stops](./data/Terry_Stops.csv) | This file contains data on police stops by the SPD, and includes perceived race and gender of the people involved
+
 
 ## Application Programming Interfaces (API) (TODO: Update/delete for your PROJECT)
 
@@ -19,6 +21,6 @@ Sellers lists and the books that have been reviewed in the New York Times. An ov
 * Edit this `README.md` file and summarize your data files
 * If you are using APIs to access data, summarize them, providing specific information
 * See examples above.
-* Please remember your audience (prospective employers, open source colleagues, TAs, Instructors). Therefore, 
+* Please remember your audience (prospective employers, open source colleagues, TAs, Instructors). Therefore,
 aim for clarity and conciseness.
 * When done, be sure to delete these NOTE sections and the example CSV file (which are intended for you, of course, not your audience!)
