@@ -58,6 +58,8 @@ count_race <- count_race %>%
 # Create Data
 data2 <- count_race
 
+# is there a way to make labels outside pointing instead of inside?
+# or make it so that the percentages can be looked at hovering over data, or listed out?
 
 # Compute the position of labels
 data2 <- data2 %>% 
