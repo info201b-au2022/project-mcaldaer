@@ -76,4 +76,5 @@ ggplot(data2, aes(x="", y=prop, fill=perceived_race)) +
   
   geom_text(aes(y = ypos, label = percentage), color = "white", size=3) +
   scale_fill_brewer(palette="Set3")
+
   
