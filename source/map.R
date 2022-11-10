@@ -15,7 +15,7 @@ OIS <- raw_OIS %>%
 View(OIS)
 
 #here I am setting the parameters for the map layer 
-seattle <- qmap("seattle", zoom = 11, maptype = "hybrid")
+seattle <- qmap("seattle", zoom = 11, source = "stamen", maptype = "toner")
 seattle
 
 #here I can get a scatterplot of the longitude/latitude points by fatality
@@ -32,7 +32,7 @@ seattle +
              aes(x=long, y=lat, 
                  color = Fatal))
 
-#scatterplot on the map, by fatality 
+#scatterplot on the map, by race
 seattle +
   geom_point(data=OIS, 
              aes(x=long, y=lat, 
