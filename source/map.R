@@ -2,6 +2,7 @@ install.packages("ggmap")
 library(ggplot2)
 library(ggmap)
 library(dplyr)
+#LOOK AT LEAFLET AND W7 L2 R FILES FOR HELP
 
 #load Officer Involved Shooting dataset 
 raw_OIS <- read.csv("https://raw.githubusercontent.com/info201b-au2022/project-mcaldaer/main/data/SPD_Officer_Involved_Shooting__OIS__Data.csv")
@@ -37,6 +38,13 @@ seattle +
   geom_point(data=OIS, 
              aes(x=long, y=lat, 
                  color = race))
+install.packages("leaflet")
+
+
+library(leaflet)
+leaflet() %>% 
+  addTiles() %>% 
+  setView(47.6062, 122.3321, zoom = 5)
 
 
 # map <- get_map("seattle")
