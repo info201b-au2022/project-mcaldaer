@@ -1,4 +1,4 @@
-install.packages("ggmap")
+# install.packages("ggmap")
 library(ggplot2)
 library(ggmap)
 library(dplyr)
@@ -11,8 +11,8 @@ View(raw_OIS)
 #selecting relevant columns
 OIS <- raw_OIS %>% 
   filter(City == "Seattle") %>% 
-  select(Longitude, Latitude, Subject.Race, Fatal) %>% 
-  rename(lat = Latitude, long = Longitude, race = Subject.Race)
+  select(Longitude, Latitude, Subject.Race, Fatal, Disposition) %>% 
+  rename(lat = Latitude, long = Longitude, race = Subject.Race, justified = Disposition)
 View(OIS)
 
 #here I am setting the parameters for the map layer 
@@ -38,6 +38,13 @@ seattle +
   geom_point(data=OIS, 
              aes(x=long, y=lat, 
                  color = race))
+
+#scatterplot on map, color indicates whether shooting was justified 
+seattle +
+  geom_point(data=OIS, 
+             aes(x=long, y=lat, 
+                 color = justified))
+
 install.packages("leaflet")
 
 
@@ -66,5 +73,5 @@ leaflet() %>%
 
 
 
-# register_google(key = "AIzaSyA6IXtNTqQSNjxLG0vcFgct5eHOChp5MNw")
+register_google(key = "AIzaSyA6IXtNTqQSNjxLG0vcFgct5eHOChp5MNw")
 
