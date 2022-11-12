@@ -50,7 +50,8 @@ Num_Asian <- 16.31
 Num_MultiRacial <- 7.64
 Num_Black <- 7.06
 Num_Other <- 2.38
-Num_American_India <- 0.54
+Num_American_Indian
+<- 0.54
 Num_Hawaiian <- 0.26
 Num_Hispanic <- 7.1
 
