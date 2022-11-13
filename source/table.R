@@ -15,3 +15,23 @@ library("tidyverse")
 library("dplyr")
 
 options(timeout = 120)
+
+# table 1 - Gender Counts
+
+gender <- Terry_Stops %>% group_by(Subject.Perceived.Gender) %>% summarise(Counts = n())
+print(gender)
+
+# table 2 - Race Counts
+
+race <- Terry_Stops %>% group_by(Subject.Perceived.Race) %>% summarise(Counts = n())
+print(race)
+
+# table 3 - Geography Counts
+
+precinct <- Terry_Stops %>% group_by(Precinct) %>% summarise(Counts = n())
+print(precinct)
+
+# table 4 - Interaction Counts
+
+resolution <- Terry_Stops %>% group_by(Stop.Resolution) %>% summarise(Counts = n())
+print(resolution)

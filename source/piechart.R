@@ -67,7 +67,7 @@ library(ggplot2)
 data <- count_race_2
 
 # Basic piechart
-ggplot(data, aes (x="", y=value, fill=perceived_race)) +
+pie_chart <- ggplot(data, aes (x="", y=value, fill=perceived_race)) +
   geom_bar(stat="identity", width=1, color="white") +
   coord_polar("y", start=0) +
 
