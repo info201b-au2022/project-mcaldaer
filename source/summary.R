@@ -25,7 +25,7 @@ num_shooting <- nrow(SPD_Officer_Involved_Shooting)
 print(num_shooting)
 
 # Interaction Types
-print(unique(Terry_Stops$Stop.Resolution))
+interactions <- print(unique(Terry_Stops$Stop.Resolution))
 
 # 1. What kinds of interactions or violence occur between police and civilians? What are the most common ones? 
 # Calculate # of Field Contact, Offense Report, Arrest, Referred for Prosecution, Citation/Infraction
@@ -50,8 +50,7 @@ Num_Asian <- 16.31
 Num_MultiRacial <- 7.64
 Num_Black <- 7.06
 Num_Other <- 2.38
-Num_American_Indian
-<- 0.54
+Num_American_Indian <- 0.54
 Num_Hawaiian <- 0.26
 Num_Hispanic <- 7.1
 

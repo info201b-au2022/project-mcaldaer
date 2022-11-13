@@ -19,6 +19,13 @@ View(OIS)
 seattle <- qmap("seattle", zoom = 11, source = "stamen", maptype = "toner")
 seattle
 
+#creating generic labels 
+labels <- labs(
+  title = "Map of Officer Involved Shootings in Seattle, WA", 
+  subtitle = "Data from 2005-2019",
+  caption = "Officer Involved Shooting in Seattle from 2005, displayed by", 
+  alt = "Officer Involved Shooting in Seattle from 2005, displayed by"
+)
 #here I can get a scatterplot of the longitude/latitude points by fatality
 ggplot(data = OIS)+
   geom_point(mapping = aes(x = long, y = lat, color = Fatal))
@@ -28,22 +35,25 @@ ggplot(data = OIS)+
   geom_point(mapping = aes(x = long, y = lat, color = race))
 
 #scatterplot on the map, by fatality 
-seattle +
+map_fatality <- seattle +
   geom_point(data=OIS, 
              aes(x=long, y=lat, 
-                 color = Fatal))
+                 color = Fatal)) + 
+  labels
 
 #scatterplot on the map, by race
-seattle +
+map_race <- seattle +
   geom_point(data=OIS, 
              aes(x=long, y=lat, 
-                 color = race))
+                 color = race)) +
+  labels
 
 #scatterplot on map, color indicates whether shooting was justified 
-seattle +
+map_justified <- seattle +
   geom_point(data=OIS, 
              aes(x=long, y=lat, 
-                 color = justified))
+                 color = justified)) +
+  labels
 
 install.packages("leaflet")
 
