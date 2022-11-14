@@ -40,6 +40,7 @@ source("../source/piechart.R")
 ## Chart 3: Map
 ``` {r}
 source("../source/map.R")
+register_google(key = "AIzaSyA6IXtNTqQSNjxLG0vcFgct5eHOChp5MNw")
 # map_fatality
 ```
 `r map_fatality`
