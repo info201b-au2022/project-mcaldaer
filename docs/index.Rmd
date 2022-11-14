@@ -40,27 +40,36 @@ Table 4: For interactions, field contact is the most.
 ## Chart 1: Bar Chart
 ``` {r bar chart, echo = FALSE, include = FALSE}
 source("../source/barchart.R")
+```
+
+``` {r plotting bar chart, echo = FALSE}
 plot(bar_chart)
 ```
 
 ## Chart 2: Pie Chart
 ``` {r pie chart, echo = FALSE, include = FALSE}
 source("../source/piechart.R")
+```
+
+``` {r plotting pie chart, echo = FALSE}
 plot(pie_chart_stops)
 ```
+
 The purpose of the created pie chart is to display visually the perceived races of the people that are stopped by police based on data from the SPD, so that any disparities between the number of stops for different races can be acknowledged. From the pie chart, it can be seen that people of the perceived race of White is the group that is stopped the most by police. Additionally, the second group of people with the greatest number of stops would be people that belong to the race of Black or African American. The chart also displays numerous other races and how much they are stopped in comparison to those of other racial groups.The data from the chart can be used to compare to overall Seattle demographics. For example, it is concerning how much greater, at 29.71% of
 
 ## Chart 3: Map 
 ``` {r map, echo = FALSE, include = FALSE}
 source("../source/map.R")
 register_google(key = "AIzaSyA6IXtNTqQSNjxLG0vcFgct5eHOChp5MNw")
-plot(map_fatality)
 ```
-`r plot(map_fatality)`
+
+``` {r plotting map, echo = FALSE, fig.show="hold", out.width="50%"}
+map_fatality
+map_race
+```
 
 This visualization seeks to geographically plot the most extreme form of police violence, _Officer Involved Shootings_. This plot was included because it allows us to visualize where in Seattle shootings have occurred. While it would have been valuable to plot the geographical distribution of all the of the interactions we are analyzing (Terry Stops and Use of Force, too), the Officer Involved Shootings (OIS) dataset was the only set that included detailed location data. The longitude and latitude points included in the OIS dataset made for straightforward plotting.
 
-By plotting these 156 instances of OIS on a map of Seattle, one can observe that a large cluster of shootings occurred in the city center, in Downtown Seattle and the surrounding areas. One can also observe the noticeable absence of shootings in North Seattle neighborhoods like Ballard, Fremont, Magnolia and Queen Anne as well as the neighborhood of Madison Park. Perhaps unsurprisingly, these are some of the wealthier (and whiter) neighborhoods in the city. The color of the dots on each respective map indicate fatality,
-race of the subject, or whether the shooting was justified/within policy. While the map is useful for understanding the geographical distribution of shootings, these sub-trends are more easily understood by summary statistics, or a different type of visualization.
+By plotting these 156 instances of OIS on a map of Seattle, one can observe that a large cluster of shootings occurred in the city center, in Downtown Seattle and the surrounding areas. One can also observe the noticeable absence of shootings in North Seattle neighborhoods like Ballard, Fremont, Magnolia and Queen Anne as well as the neighborhood of Madison Park. Perhaps unsurprisingly, these are some of the wealthier (and whiter) neighborhoods in the city. The color of the dots on each respective map indicate fatality, or the race of the subject. While the map is useful for understanding the geographical distribution of shootings, these sub-trends are more easily understood by summary statistics, or a different type of visualization.
 
 
