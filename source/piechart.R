@@ -66,12 +66,8 @@ count_race_percentages <- count_race_2 %>%
   mutate(total_subjects = sum(value)) %>%
   mutate(percentage = round((value / total_subjects * 100), 2))
 
-
 # Create Data
 data2 <- count_race_percentages
-
-# is there a way to make labels outside pointing instead of inside?
-# or make it so that the percentages can be looked at hovering over data, or listed out?
 
 # Compute the position of labels
 data2 <- data2 %>% 
