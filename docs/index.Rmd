@@ -7,94 +7,84 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+options(repos = list(CRAN="http://cran.rstudio.com/"))
 ```
 
-## Summary paragraph: 
-``` {r}
+## Summary paragraph:
+``` {r summary list, echo = FALSE, include = FALSE}
 source("../source/summary.R")
-interactions
 ```
+Here is where we will write a summary paragraph that includes values calculated in the summary.R file. Lets test it out
 
-Here is where we will write a summary paragraph that includes values calculated in the summary.R file. Lets test it out 
-
-We found that the Terry Stops dataset showed there were 5 types of interactions 
-
-`r interactions`
+We found that the Terry Stops dataset showed there were 5 types of interactions `r interactions`
 
 ## Table of Summary Information
-``` {r}
+``` {r echo = FALSE, include = FALSE}
 source("../source/table.R")
 ```
+`r gender_table`
+`r race_table`
+`r geo_table`
+`r interaction_table`
+
+### Findings from data in tables
+
+Table 1: For gender, males got stopped the most.
+
+Table 2: White and black got stopped the most. This could mean a bias of police towards black people.
+
+Table 3: North and West got the most people stopped. It could mean these two areas are not as safe as other areas.
+
+Table 4: For interactions, field contact is the most.
 
 ## Chart 1: Bar Chart
-``` {r}
+``` {r echo = FALSE, include = FALSE}
 source("../source/barchart.R")
+bar_chart
+```
+`r bar_chart`
+
+The purpose of the created pie chart is to display visually the perceived races of the people that are stopped by police based on data from the SPD, so that any disparities between the number of stops for different races can be acknowledged. From the pie chart, it can be seen that people of the perceived race of White is the group that is stopped the most by police. Additionally, the second group of people with the greatest number of stops would be people that belong to the race of Black or African American. The chart also displays numerous other races and how much they are stopped in comparison to those of other racial groups.The data from the chart can be used to compare to overall Seattle demographics. For example, it is concerning how much greater, at 29.71% of
+
+
+
+### Example 2: Initialize a variable and then use it
+```{r}
+# Example 1: This function was "sourced" above
+msg <- data_access_test(" Morgan!")
 ```
 
-## Chart 2: Pie Chart
-``` {r}
-source("../source/piechart.R")
+> `r msg` Hope you have a good day!!
+
+## ABOUT THIS FILE:
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
 ```
-`r pie_chart`
 
-## Chart 3: Map
-``` {r}
-source("../source/map.R")
-register_google(key = "AIzaSyA6IXtNTqQSNjxLG0vcFgct5eHOChp5MNw")
-# map_fatality
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
 ```
-`r map_fatality`
-`r map_race`
-`r map_justified`
 
-This visualization seeks to geographically plot the most extreme form of police violence, _Officer Involved Shootings_. This plot was included because it allows us to visualize where in Seattle shootings have occurred. While it would have been valuable to plot the geographical distribution of all the of the interactions we are analyzing (Terry Stops and Use of Force, too), the Officer Involved Shootings (OIS) dataset was the only set that included detailed location data. The longitude and latitude points included in the OIS dataset made for straightforward plotting. 
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
-By plotting these 156 instances of OIS on a map of Seattle, one can observe that a large 
-cluster of shootings occurred in the city center, in Downtown and the surrounding areas. 
-One can also observe the noticeable absence of shootings in North Seattle neighborhoods 
-like Ballard, Fremont, Magnolia and Queen Anne as well as the neighborhood of Madison Park. Perhaps unsurprisingly, these are some of the wealthier (and whiter) neighborhoods in the city. 
+# THIS IS A TEST! 
+
+This visualization seeks to geographically plot the most extreme form of police violence, _Officer Involved Shootings_. This plot was included because it allows us to visualize where in Seattle shootings have occurred. While it would have been valuable to plot the geographical distribution of all the of the interactions we are analyzing (Terry Stops and Use of Force, too), the Officer Involved Shootings (OIS) dataset was the only set that included detailed location data. The longitude and latitude points included in the OIS dataset made for straightforward plotting.
+
+By plotting these 156 instances of OIS on a map of Seattle, one can observe that a large
+cluster of shootings occurred in the city center, in Downtown Seattle and the surrounding areas.
+One can also observe the noticeable absence of shootings in North Seattle neighborhoods like Ballard, Fremont, Magnolia and Queen Anne as well as the neighborhood of Madison Park. Perhaps unsurprisingly, these are some of the wealthier (and whiter) neighborhoods in the city. The color of the dots on each respective map indicate fatality,
+race of the subject, or whether the shooting was justified/within policy. While the map is useful for understanding the geographical distribution of shootings, these sub-trends are more easily understood by summary statistics, or a different type of visualization.
 
 
-<!-- ## What is this file for? -->
 
-<!-- * This file will eventually become your project report for **P02: Exploratory Data Analysis**. Specifically, you will write rmarkdown to report your exploratory data analysis. -->
 
-<!-- * Please see Canvas for more details. -->
-
-<!-- ## ACCESSING THE /source DIRECTORY -->
-<!-- ### Example 1: Source some code and run a function -->
-<!-- ```{r} -->
-<!-- # Example 1: Note relative path, which can be read: Up one -->
-<!-- # directory(..), down into source (/source), and  -->
-<!-- # then "source" an R file (data_access.R) -->
-<!-- source("../source/data_access.R") -->
-<!-- data_access_test() -->
-<!-- ``` -->
-
-<!-- ### Example 2: Initialize a variable and then use it -->
-<!-- ```{r} -->
-<!-- # Example 1: This function was "sourced" above -->
-<!-- msg <- data_access_test(" Morgan!") -->
-<!-- ``` -->
-
-<!-- > `r msg` Hope you have a good day!!  -->
-
-<!-- ## ABOUT THIS FILE:  -->
-
-<!-- This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>. -->
-
-<!-- When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this: -->
-
-<!-- ```{r cars} -->
-<!-- summary(cars) -->
-<!-- ``` -->
-
-<!-- ## Including Plots -->
-
-<!-- You can also embed plots, for example: -->
-
-<!-- ```{r pressure, echo=FALSE} -->
-<!-- plot(pressure) -->
-<!-- ``` -->
-
-<!-- Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot. -->
