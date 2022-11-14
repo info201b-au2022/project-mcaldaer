@@ -93,6 +93,7 @@ pie_chart_2
 
 
 # Pie Chart #3 : https://r-charts.com/part-whole/pie-chart-labels-outside-ggplot2/
+# Use this one as the final pie chart
 
 # Load Libraries
 library(ggplot2)
@@ -100,23 +101,23 @@ library(ggrepel)
 library(tidyverse)
 
 # Get the positions
-df2 <- count_race_percentages %>% 
+df <- count_race_percentages %>% 
   mutate(csum = rev(cumsum(rev(percentage))), 
          pos = percentage/2 + lead(csum, 1),
          pos = if_else(is.na(pos), percentage/2, pos))
 
-pie_chart_3 <-ggplot(count_race_percentages, aes(x = "" , y = percentage, fill = fct_inorder(perceived_race))) +
+pie_chart_stops <-ggplot(count_race_percentages, aes(x = "" , y = percentage, fill = fct_inorder(perceived_race))) +
   geom_col(width = 1, color = "white") +
   coord_polar(theta = "y") +
   scale_fill_brewer(palette = "Pastel1") +
-  geom_label_repel(data = df2,
+  geom_label_repel(data = df,
                    aes(y = pos, label = paste0(percentage, "%")),
                    size = 4.5, nudge_x = 1, show.legend = FALSE) +
   guides(fill = guide_legend(title = "Perceived Race")) +
   theme_void() +
   ggtitle("Police Terry Stops by Race")
 
-pie_chart_3
+pie_chart_stops
 
 # Paragraph Description
 # The purpose of the created pie chart is to display visually the perceived races of the
@@ -127,5 +128,7 @@ pie_chart_3
 # people with the greatest number of stops would be people that belong to the
 # race of Black or African American. The chart also displays numerous other
 # races and how much they are stopped in comparison to those of other racial groups.
+# The data from the chart can be used to compare to overall Seattle demographics. For example,
+# it is concerning how much greater, at 29.71% of 
 
 
