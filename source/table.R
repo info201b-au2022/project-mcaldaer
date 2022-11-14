@@ -22,26 +22,38 @@ options(timeout = 120)
 
 gender <- Terry_Stops %>% group_by(Subject.Perceived.Gender) %>% summarise(Counts = n())
 print(gender)
-
-kable(gender, col.names = c("Gender", "Stop Counts"), caption = "Gender Stop Counts")
+total_count <- sum(gender[["Counts"]])
+print(total_count)
+gender1 <- mutate(gender, Percentage = 100.0 * Counts / total_count)
+print(gender1)
+kable(gender1, col.names = c("Gender", "Stop Counts", "Percentage"), caption = "Gender Stop Counts")
 
 # table 2 - Race Counts
 
 race <- Terry_Stops %>% group_by(Subject.Perceived.Race) %>% summarise(Counts = n())
 print(race)
-
-kable(race, col.names = c("Race", "Stop Counts"), caption = "Race Stop Counts")
+total_count <- sum(race[["Counts"]])
+print(total_count)
+race1 <- mutate(race, Percentage = 100.0 * Counts / total_count)
+print(race1)
+kable(race1, col.names = c("Race", "Stop Counts", "Percentage"), caption = "Race Stop Counts")
 
 # table 3 - Geography Counts 
 
 precinct <- Terry_Stops %>% group_by(Precinct) %>% summarise(Counts = n())
 print(precinct)
-
-kable(precinct, col.names = c("Geography", "Stop Counts"), caption = "Geography Stop Counts")
+total_count <- sum(precinct[["Counts"]])
+print(total_count)
+precinct1 <- mutate(precinct, Percentage = 100.0 * Counts / total_count)
+print(precinct1)
+kable(precinct1, col.names = c("Geography", "Stop Counts", "Percentage"), caption = "Geography Stop Counts")
 
 # table 4 - Interaction Counts
 
 resolution <- Terry_Stops %>% group_by(Stop.Resolution) %>% summarise(Counts = n())
 print(resolution)
-
-kable(resolution, col.names = c("Interaction", "Stop Counts"), caption = "Interaction Stop Counts")
+total_count <- sum(resolution[["Counts"]])
+print(total_count)
+resolution1 <- mutate(resolution, Percentage = 100.0 * Counts / total_count)
+print(resolution1)
+kable(resolution1, col.names = c("Interaction", "Stop Counts", "Percentage"), caption = "Interaction Stop Counts")
