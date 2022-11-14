@@ -22,9 +22,7 @@ seattle
 #creating generic labels 
 labels <- labs(
   title = "Map of Officer Involved Shootings in Seattle, WA", 
-  subtitle = "Data from 2005-2019",
-  caption = "Officer Involved Shooting in Seattle from 2005, displayed by", 
-  alt = "Officer Involved Shooting in Seattle from 2005, displayed by"
+  subtitle = "Data from 2005-2019"
 )
 #here I can get a scatterplot of the longitude/latitude points by fatality
 ggplot(data = OIS)+
@@ -39,21 +37,29 @@ map_fatality <- seattle +
   geom_point(data=OIS, 
              aes(x=long, y=lat, 
                  color = Fatal)) + 
-  labels
+  labels +
+  labs(caption = "Officer Involved Shooting in Seattle from 2005, displayed by fatality", 
+       alt = "Officer Involved Shooting in Seattle from 2005, displayed by fatality")
 
 #scatterplot on the map, by race
 map_race <- seattle +
   geom_point(data=OIS, 
              aes(x=long, y=lat, 
                  color = race)) +
-  labels
+  labels +
+  labs(caption = "Officer Involved Shooting in Seattle from 2005, displayed by race", 
+       alt = "Officer Involved Shooting in Seattle from 2005, displayed by race")
+
 
 #scatterplot on map, color indicates whether shooting was justified 
 map_justified <- seattle +
   geom_point(data=OIS, 
              aes(x=long, y=lat, 
                  color = justified)) +
-  labels
+  labels +
+  labs(caption = "Officer Involved Shooting in Seattle from 2005, displayed by whether force was justified", 
+       alt = "Officer Involved Shooting in Seattle from 2005, displayed by whether force was justified")
+map_justified
 
 install.packages("leaflet")
 
