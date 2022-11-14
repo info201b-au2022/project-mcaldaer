@@ -26,7 +26,7 @@ total_count <- sum(gender[["Counts"]])
 print(total_count)
 gender1 <- mutate(gender, Percentage = 100.0 * Counts / total_count)
 print(gender1)
-kable(gender1, col.names = c("Gender", "Stop Counts", "Percentage"), caption = "Gender Stop Counts")
+gender_table <- kable(gender1, col.names = c("Gender", "Stop Counts", "Percentage"), caption = "Gender Stop Counts")
 
 # table 2 - Race Counts
 
@@ -36,7 +36,7 @@ total_count <- sum(race[["Counts"]])
 print(total_count)
 race1 <- mutate(race, Percentage = 100.0 * Counts / total_count)
 print(race1)
-kable(race1, col.names = c("Race", "Stop Counts", "Percentage"), caption = "Race Stop Counts")
+race_table <- kable(race1, col.names = c("Race", "Stop Counts", "Percentage"), caption = "Race Stop Counts")
 
 # table 3 - Geography Counts 
 
@@ -46,7 +46,7 @@ total_count <- sum(precinct[["Counts"]])
 print(total_count)
 precinct1 <- mutate(precinct, Percentage = 100.0 * Counts / total_count)
 print(precinct1)
-kable(precinct1, col.names = c("Geography", "Stop Counts", "Percentage"), caption = "Geography Stop Counts")
+geo_table <- kable(precinct1, col.names = c("Geography", "Stop Counts", "Percentage"), caption = "Geography Stop Counts")
 
 # table 4 - Interaction Counts
 
@@ -56,4 +56,4 @@ total_count <- sum(resolution[["Counts"]])
 print(total_count)
 resolution1 <- mutate(resolution, Percentage = 100.0 * Counts / total_count)
 print(resolution1)
-kable(resolution1, col.names = c("Interaction", "Stop Counts", "Percentage"), caption = "Interaction Stop Counts")
+interaction_table <- kable(resolution1, col.names = c("Interaction", "Stop Counts", "Percentage"), caption = "Interaction Stop Counts")
