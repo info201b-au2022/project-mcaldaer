@@ -1,4 +1,5 @@
 # install.packages("ggmap")
+install.packages("ggrepel")
 library(ggplot2)
 library(ggmap)
 library(dplyr)
@@ -38,17 +39,17 @@ map_fatality <- seattle +
              aes(x=long, y=lat, 
                  color = Fatal)) + 
   labels +
-  labs(caption = "Officer Involved Shooting in Seattle from 2005, displayed by fatality", 
-       alt = "Officer Involved Shooting in Seattle from 2005, displayed by fatality")
-
+  labs(caption = "Officer Involved Shooting in Seattle from 2005-2019, color indicatesfatality", 
+       alt = "Officer Involved Shooting in Seattle from 2005-2019, color indicates fatality")
+map_fatality
 #scatterplot on the map, by race
 map_race <- seattle +
   geom_point(data=OIS, 
              aes(x=long, y=lat, 
                  color = race)) +
   labels +
-  labs(caption = "Officer Involved Shooting in Seattle from 2005, displayed by race", 
-       alt = "Officer Involved Shooting in Seattle from 2005, displayed by race")
+  labs(caption = "Officer Involved Shootings in Seattle from 2005-2019, color indicates race", 
+       alt = "Officer Involved Shootings in Seattle from 2005-2019, color indicates race")
 
 
 #scatterplot on map, color indicates whether shooting was justified 
@@ -57,9 +58,26 @@ map_justified <- seattle +
              aes(x=long, y=lat, 
                  color = justified)) +
   labels +
-  labs(caption = "Officer Involved Shooting in Seattle from 2005, displayed by whether force was justified", 
-       alt = "Officer Involved Shooting in Seattle from 2005, displayed by whether force was justified")
+  labs(caption = "Officer Involved Shooting in Seattle from 2005-2019, color indicates whether force was justified", 
+       alt = "Officer Involved Shooting in Seattle from 2005-2019, color indicates whether force was justified")
 map_justified
+
+#Descriptive paragraph
+# This visualization seeks to geographically plot the most extreme form of police violence, _Officer Involved Shootings_. 
+# This plot was included because it allows us to visualize where in Seattle shootings have
+# occurred. While it would have been valuable to plot the geographical distribution
+# of all the of the interactions we are analyzing (Terry Stops and Use of Force, too), the Officer 
+# Involved Shootings (OIS) dataset was the only set that included detailed location data. The longitude and 
+# latitude points included in the OIS dataset made for straightforward plotting. 
+# 
+# By plotting these 156 instances of OIS on a map of Seattle, one can observe that a large 
+# cluster of shootings occurred in the city center, in Downtown and the surrounding areas. 
+# One can also observe the noticeable absence of shootings in North Seattle neighborhoods 
+# like Ballard, Fremont, Magnolia and Queen Anne as well as the neighborhood of Madison Park. 
+# Perhaps unsurprisingly, these are some of the wealthier (and whiter) neighborhoods in the city. 
+
+
+
 
 install.packages("leaflet")
 
