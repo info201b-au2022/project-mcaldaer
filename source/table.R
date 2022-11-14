@@ -16,7 +16,6 @@ library("tidyverse")
 library("dplyr")
 library(knitr)
 
-options(timeout = 120) 
 
 # table 1 - Gender Counts
 
@@ -27,7 +26,7 @@ print(total_count)
 gender1 <- mutate(gender, Percentage = 100.0 * Counts / total_count)
 print(gender1)
 gender_table <- kable(gender1, col.names = c("Gender", "Stop Counts", "Percentage"), caption = "Gender Stop Counts")
-
+gender_table
 # table 2 - Race Counts
 
 race <- Terry_Stops %>% group_by(Subject.Perceived.Race) %>% summarise(Counts = n())
