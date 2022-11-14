@@ -11,27 +11,37 @@ View(SPD_Officer_Involved_Shooting)
 # Load the tidyverse packages
 # install.packages("tidyverse") - do it if not installed
 # install.packages("dplyr") - do it if not installed
+install.packages("knitr")
 library("tidyverse")
 library("dplyr")
+library(knitr)
 
-options(timeout = 120)
+options(timeout = 120) 
 
 # table 1 - Gender Counts
 
 gender <- Terry_Stops %>% group_by(Subject.Perceived.Gender) %>% summarise(Counts = n())
 print(gender)
 
+kable(gender, col.names = c("Gender", "Stop Counts"), caption = "Gender Stop Counts")
+
 # table 2 - Race Counts
 
 race <- Terry_Stops %>% group_by(Subject.Perceived.Race) %>% summarise(Counts = n())
 print(race)
 
-# table 3 - Geography Counts
+kable(race, col.names = c("Race", "Stop Counts"), caption = "Race Stop Counts")
+
+# table 3 - Geography Counts 
 
 precinct <- Terry_Stops %>% group_by(Precinct) %>% summarise(Counts = n())
 print(precinct)
+
+kable(precinct, col.names = c("Geography", "Stop Counts"), caption = "Geography Stop Counts")
 
 # table 4 - Interaction Counts
 
 resolution <- Terry_Stops %>% group_by(Stop.Resolution) %>% summarise(Counts = n())
 print(resolution)
+
+kable(resolution, col.names = c("Interaction", "Stop Counts"), caption = "Interaction Stop Counts")
