@@ -46,7 +46,7 @@ source("../source/barchart.R")
 plot(bar_chart)
 ```
 
-This visualization shows the classification of Use Of Force by sworn law enforcement officers of the Seattle Police Department. This bar chart is included to show how the incident types are distributed. The most frequent type of Use Of Force was level 1 with approximately 900 counts. For this type, force that causes transitory pain or the complaint of transitory pain is used. The chart shows that the count dramatically decreases as the incident level gets stronger. So the second most frequent incident type was level 2 with over 300 counts. Force in level 2 is reasonably expected to cause physical injury greater than transitory pain but less than great or substantial bodily harm. The least types were level 3. Force used in this level is reasonably expected to cause great bodily harm, substantial bodily harm, loss of consciousness, or death. The least frequent type was level 3 - OIS, which means there was an Officer Involved Shooting.
+This visualization shows the classification of Use Of Force by sworn law enforcement officers of the Seattle Police Department. The bar chart is included to show how the incident types are distributed. It would help answering the research question: What kinds of interactions or violence occur between police and civilians and what are the most common ones? The most frequent type of Use Of Force was level 1 with approximately 900 counts. For this type, force that causes transitory pain or the complaint of transitory pain is used. The chart shows that the count dramatically decreases as the incident level gets stronger. So the second most frequent incident type was level 2 with over 300 counts. Force in level 2 is reasonably expected to cause physical injury greater than transitory pain but less than great or substantial bodily harm. The least types were level 3. Force used in this level is reasonably expected to cause great bodily harm, substantial bodily harm, loss of consciousness, or death. The least frequent type was level 3 - OIS, which means there was an Officer Involved Shooting.
 
 ## Chart 2: Pie Chart
 ``` {r pie chart, echo = FALSE, include = FALSE}
@@ -61,7 +61,7 @@ The purpose of the created pie chart is to display visually the perceived races 
 pie chart, it can be seen that people of the perceived race of White is the group that is stopped the most by police. The second group of people with the greatest number of stops would be people that belong to the Black or African American race. The chart also displays numerous other races and how much they are stopped in comparison to those of other racial groups. The data from the chart can be used to compare to overall Seattle demographics. For the White people, the groups seem to correspond, with the group being the largest demographic in Seattle, and also being the group that is stopped the most by police. However, the contrast in some groups are significant. Specifically, it is concerning how much greater, at 29.71% of Black people are stopped by police, while they only compose of 7.06% of the population of
 the city of Seattle.
 
-## Chart 3: Map 
+## Chart 3: Map
 ``` {r map, echo = FALSE, include = FALSE}
 source("../source/map.R")
 register_google(key = "AIzaSyA6IXtNTqQSNjxLG0vcFgct5eHOChp5MNw")
@@ -75,5 +75,3 @@ map_race
 This visualization seeks to geographically plot the most extreme form of police violence, _Officer Involved Shootings_. This plot was included because it allows us to visualize where in Seattle shootings have occurred. While it would have been valuable to plot the geographical distribution of all the of the interactions we are analyzing (Terry Stops and Use of Force, too), the Officer Involved Shootings (OIS) dataset was the only set that included detailed location data. The longitude and latitude points included in the OIS dataset made for straightforward plotting.
 
 By plotting these 156 instances of OIS on a map of Seattle, one can observe that a large cluster of shootings occurred in the city center, in Downtown Seattle and the surrounding areas. One can also observe the noticeable absence of shootings in North Seattle neighborhoods like Ballard, Fremont, Magnolia and Queen Anne as well as the neighborhood of Madison Park. Perhaps unsurprisingly, these are some of the wealthier (and whiter) neighborhoods in the city. The color of the dots on each respective map indicate fatality, or the race of the subject. While the map is useful for understanding the geographical distribution of shootings, these sub-trends are more easily understood by summary statistics, or a different type of visualization.
-
-
