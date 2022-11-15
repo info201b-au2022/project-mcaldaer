@@ -39,7 +39,7 @@ map_fatality <- seattle +
              aes(x=long, y=lat, 
                  color = Fatal)) + 
   labels +
-  labs(caption = "Officer Involved Shooting in Seattle from 2005-2019, color indicatesfatality", 
+  labs(caption = "Officer Involved Shooting in Seattle from 2005-2019, color indicates fatality", 
        alt = "Officer Involved Shooting in Seattle from 2005-2019, color indicates fatality")
 map_fatality
 #scatterplot on the map, by race

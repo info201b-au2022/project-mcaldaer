@@ -16,6 +16,17 @@ library("dplyr")
 
 options(timeout = 120) 
 
+#Summary List 
+summary <- list()
+summary$most_common <- most_common 
+summary$white_stops <- Num_White_Stops
+summary$black_stops <- Num_Black_Stops
+summary$force <- 
+
+
+summary
+
+
 # Total Number of Interactions
 num_Stops <- nrow(Terry_Stops)
 print(num_Stops)
@@ -39,6 +50,17 @@ Num_Referred_for_Prosecution <- nrow(subset(Terry_Stops, Terry_Stops$Stop.Resolu
 print(Num_Referred_for_Prosecution)
 Num_Citation_Infraction <- nrow(subset(Terry_Stops, Terry_Stops$Stop.Resolution == "Citation / Infraction"))
 print(Num_Citation_Infraction)
+
+interact_df <- data.frame(
+  type = c("Field Contact", "Offense Report", "Arrest", "Referred for Prosecution", "Citation Infraction"), 
+  count = c(Num_Field_Contact, Num_Offense_Report, Num_Arrest, Num_Referred_for_Prosecution, Num_Citation_Infraction)
+)
+
+most_common <- interact_df %>% 
+  filter(count == max(count)) %>% 
+  pull(type)
+most_common
+
 
 # 2. Analyze general demographics in Seattle
 # https://worldpopulationreview.com/us-cities/seattle-wa-population
@@ -113,10 +135,11 @@ Num_Female_Stops <- nrow(subset(Terry_Stops, str_detect(Terry_Stops$Subject.Perc
 print(Num_Female_Stops)
 
 #Bias - Yes
-print(Num_Black / Num_White)
+bw_pop <- print(Num_Black / Num_White)
 print(Num_Black_Stops / Num_White_Stops)
 print(Num_Black_Force / Num_White_Force)
-print(Num_Black_Shooting / Num_White_Shooting)
+bw_shooting <- print(Num_Black_Shooting / Num_White_Shooting)
+
 
 print(Num_Male / Num_Female)
 print(Num_Male_Stops / Num_Female_Stops)
