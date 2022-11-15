@@ -38,14 +38,11 @@ The primary human values that are relevant to this project include equity and ju
 1. **What kinds of interactions or violence occur between police and civilians? What are the most common ones?**
 The question is important because civilians in Seattle should get informed about what kind of treatment they could get by the police when they are reasonably suspicious of criminal activity.
 
-2. **Analyze general demographics in Seattle.**
-This analysis is important because we could compare with the result for other research questions. We could check whether the distribution of police interactions in Seattle goes along with the general demographics such as race, gender, or geography. If there are deviations, we might conclude that there are other biases that affect the result.
+2. **How are police interactions in Seattle distributed across race and gender? Does it align with the general demographics? Or is there any bias?**
+Obviously, it is important that there should be no discrimination across race or gender. With analysis of general demographics in Seattle, we could check whether the distribution of police interactions goes along with the general demographics of race and gender. Then we would be able to figure out whether SPD discriminates against certain groups of people in their interactions.
 
-3. **How are police interactions in Seattle distributed across race and gender? Does it align with the general demographics? Or is there any bias?**
-Obviously, it is important that there should be no discrimination across race or gender. By this research question, we could figure out whether SPD discriminates against certain groups of people in their interactions.
-
-4. **How are police interactions in Seattle distributed geographically across the city? Does it align with the general demographics? Or is there any bias?**
-This question will reveal where in the city there is high frequency of police interaction. This question is important because it can help us understand where SPD may be over- or under-policing, and may also reveal policing biases related to race or other factors.
+3. **How are police interactions in Seattle distributed geographically across the city? Does it align with the general demographics? Or is there any bias?**
+This question will reveal where in the city there is high frequency of police interaction. It is important because it can help us understand where SPD may be over- or under-policing, and may also reveal policing biases related to race or other factors. With analysis of general demographics in Seattle, we could check whether the distribution of police interactions goes along with the general demographics of geography. If there are deviations, we might conclude that there are other biases that affect the result.
 
 
 ### ***The Dataset:***
@@ -95,6 +92,3 @@ Thank you to Madeleine's friend Kathryn Reyes who pointed us towards the [Police
 <br/> **1.** Terry stops | city of seattle open data portal. (n.d.). Retrieved October 31, 2022, from https://data.seattle.gov/Public-Safety/Terry-Stops/28ny-9ts8
 <br/> **2.** Use of force | city of seattle open data portal. (n.d.). Seattle. Retrieved October 31, 2022, from https://data.seattle.gov/Public-Safety/Use-Of-Force/ppi5-g2bj
 <br/> **3.** Spd officer involved shooting (Ois) data | city of seattle open data portal. (n.d.). Retrieved October 31, 2022, from https://data.seattle.gov/Public-Safety/SPD-Officer-Involved-Shooting-OIS-Data/mg5r-efcm
-
-
-***Appendix A:*** We would like feedback on the quality of our brief, datasets, and proposed research aims. Is there anything you'd like us to revise or consider moving forward?
