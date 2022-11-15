@@ -1,0 +1,20 @@
+---
+title: "table"
+author: "Ivy"
+date: "2022-11-14"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Findings from data in tables
+
+Table 1: For gender, males got stopped the most.
+
+Table 2: White and black got stopped the most. This could mean a bias of police towards black people.
+
+Table 3: North and West got the most people stopped. It could mean these two areas are not as safe as other areas.
+
+Table 4: For interactions, field contact is the most.

@@ -66,12 +66,8 @@ count_race_percentages <- count_race_2 %>%
   mutate(total_subjects = sum(value)) %>%
   mutate(percentage = round((value / total_subjects * 100), 2))
 
-
 # Create Data
 data2 <- count_race_percentages
-
-# is there a way to make labels outside pointing instead of inside?
-# or make it so that the percentages can be looked at hovering over data, or listed out?
 
 # Compute the position of labels
 data2 <- data2 %>% 
@@ -93,6 +89,7 @@ pie_chart_2
 
 
 # Pie Chart #3 : https://r-charts.com/part-whole/pie-chart-labels-outside-ggplot2/
+# Use this one as the final pie chart
 
 # Load Libraries
 library(ggplot2)
@@ -100,32 +97,40 @@ library(ggrepel)
 library(tidyverse)
 
 # Get the positions
-df2 <- count_race_percentages %>% 
+df <- count_race_percentages %>% 
   mutate(csum = rev(cumsum(rev(percentage))), 
          pos = percentage/2 + lead(csum, 1),
          pos = if_else(is.na(pos), percentage/2, pos))
 
-pie_chart_3 <-ggplot(count_race_percentages, aes(x = "" , y = percentage, fill = fct_inorder(perceived_race))) +
+pie_chart_stops <-ggplot(count_race_percentages, aes(x = "" , y = percentage, fill = fct_inorder(perceived_race))) +
   geom_col(width = 1, color = "white") +
   coord_polar(theta = "y") +
   scale_fill_brewer(palette = "Pastel1") +
-  geom_label_repel(data = df2,
+  geom_label_repel(data = df,
                    aes(y = pos, label = paste0(percentage, "%")),
                    size = 4.5, nudge_x = 1, show.legend = FALSE) +
   guides(fill = guide_legend(title = "Perceived Race")) +
   theme_void() +
   ggtitle("Police Terry Stops by Race")
 
-pie_chart_3
+pie_chart_stops
 
 # Paragraph Description
 # The purpose of the created pie chart is to display visually the perceived races of the
 # people that are stopped by police based on data from the SPD, so that any disparities
-# between the number of stops for different races can be acknowledged. From the
+# between the number of stops for different races, as well as variances from
+# the overall Seattle demographics can be acknowledged. From the
 # pie chart, it can be seen that people of the perceived race of White is the
-# group that is stopped the most by police. Additionally, the second group of
+# group that is stopped the most by police. The second group of
 # people with the greatest number of stops would be people that belong to the
-# race of Black or African American. The chart also displays numerous other
+# Black or African American race. The chart also displays numerous other
 # races and how much they are stopped in comparison to those of other racial groups.
+# The data from the chart can be used to compare to overall Seattle demographics.
+# For the White people, the groups seem to correspond, with the group being
+# the largest demographic in Seattle, and also being the group that is stopped
+# the most by police. However, the contrast in some groups are significant.
+# Specifically, it is concerning how much greater, at 29.71% of Black people
+# are stopped by police, while they only compose of 7.06% of the population of
+# the city of Seattle.
 
 
