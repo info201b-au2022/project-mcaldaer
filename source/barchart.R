@@ -10,10 +10,9 @@ bar_chart <- ggplot(Use_Of_Force, aes(x = Incident_Type)) +
   geom_bar(stat = "count") +
   labs(title = "Types of Force Used by Seattle Officers", x = "Types of Force", y = "Count") +
   coord_flip()
-<<<<<<< HEAD
 
 most_common_force <- names(which.max(table(Use_Of_Force$Incident_Type)))
-=======
+
 names(which.max(table(Use_Of_Force$Incident_Type)))
 
 uses <- Use_Of_Force %>%
@@ -21,4 +20,4 @@ uses <- Use_Of_Force %>%
   summarize(value=n()) %>%
   filter(value == max(value)) %>%
   pull(value)
->>>>>>> cbb417b13a53684920b166bba8206fa4e19ac11c
+
