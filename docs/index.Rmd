@@ -1,7 +1,7 @@
 ---
 title: "Characterizing Seattle Police Department's Civilian Interactions"
 author: "Madeleine Clarke, Allison Huang, Sean Kim, Ivy Li"
-date: "11/12/2022"
+date: "11/14/2022"
 output: html_document
 ---
 
@@ -14,9 +14,9 @@ options(repos = list(CRAN="http://cran.rstudio.com/"))
 ``` {r summary list, echo = FALSE, include = FALSE}
 source("../source/summary.R")
 ```
-Here is where we will write a summary paragraph that includes values calculated in the summary.R file. Lets test it out
-
-We found that the Terry Stops dataset showed there were 5 types of interactions `r interactions`
+The goal of our project was to better understand trends in Seattle Police Department's (SPD) policing practices. More specifically, we were interested in revealing any troubling patterns in the ways SPD was stopping civilians, using force, or shooting. By analyzing 3 datasets obtained from the SPD, we hoped to reveal any racial biases in policing as well as what areas of the city saw the most police action. Some of the main findings in our analysis are described below. 
+For one, we found that the Terry Stops dataset showed there were 5 types of interactions: **`r interactions`**. Of these, the most common type of Terry Stop was Field Contact. Further, the most stopped racial group was White individuals (`r Num_White_Stops`), however despite making up only `r Num_Black`% of the Seattle population, Black individuals were the second most stopped racial group (`r Num_Black_Stops`). 
+When analyzing the Use of Force dataset, we found that the most common type of force used was `r most_common_force`, which is the least extreme form of police force. When analyzing the most extreme form of police violence, Officer Involved Shootings, we found that there was potential racial bias present. Our analysis found that the ratio of shootings against Black individuals compared to White individuals was `r bw_shooting`, however, the population ratio for Black and White people in Seattle is `r bw_pop`
 
 ## Table of Summary Information
 ``` {r summary tables, echo = FALSE, include = FALSE}
