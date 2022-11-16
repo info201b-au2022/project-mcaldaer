@@ -17,14 +17,11 @@ library("dplyr")
 options(timeout = 120) 
 
 #Summary List 
-summary <- list()
-summary$most_common <- most_common 
-summary$white_stops <- Num_White_Stops
-summary$black_stops <- Num_Black_Stops
-summary$force <- 
-
-
-summary
+# summary <- list()
+# summary$white_stops <- Num_White_Stops
+# summary$black_stops <- Num_Black_Stops
+# 
+# summary
 
 
 # Total Number of Interactions
@@ -97,6 +94,16 @@ Num_MultiRacial_Stops <- nrow(subset(Terry_Stops, str_detect(Terry_Stops$Subject
 print(Num_MultiRacial_Stops)
 Num_Hawaiian_Stops <- nrow(subset(Terry_Stops, str_detect(Terry_Stops$Subject.Perceived.Race, 'Hawaiian')))
 print(Num_Hawaiian_Stops)
+
+most_common_force <- names(which.max(table(Use_Of_Force$Incident_Type)))
+
+uses <- Use_Of_Force %>%
+  group_by(Incident_Type) %>%
+  summarize(value=n()) %>%
+  filter(value == max(value)) %>%
+  pull(value)
+uses
+
 
 Num_Asian_Force <- nrow(subset(Use_Of_Force, str_detect(Use_Of_Force$Subject_Race, 'Asian')))
 print(Num_Asian_Force)

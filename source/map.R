@@ -3,6 +3,7 @@ install.packages("ggrepel")
 library(ggplot2)
 library(ggmap)
 library(dplyr)
+register_google(key = "AIzaSyA6IXtNTqQSNjxLG0vcFgct5eHOChp5MNw")
 #LOOK AT LEAFLET AND W7 L2 R FILES FOR HELP
 
 #load Officer Involved Shooting dataset 
