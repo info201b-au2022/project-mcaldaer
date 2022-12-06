@@ -10,7 +10,15 @@
 library(shiny)
 
 server <- function(input, output) {
-    # TBD
+    #Madeleine's server fxns here:
+  
+  
+  
+   #Allison's server fxns here:
+  
+  
+  
+   #Sean's server fxns here: 
 }
 
 

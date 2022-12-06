@@ -22,17 +22,17 @@ ui <- navbarPage(
 
   # A simple header
   header = list(
-    tags$style(type = "text/css", "body {padding-top: 70px;}"),
+    tags$style(type = "text/css", "body {padding-top: 35px;}"),
     hr(),
-    HTML("... Project Header... "),
+    HTML("Characterizing Seattle Police Department's Civillian Interactions"),
     hr()
   ),
 
   # A simple footer
   footer = list(
-    tags$style(type = "text/css", "body {padding-top: 70px;}"),
+    tags$style(type = "text/css", "body {padding-top: 35px;}"),
     hr(),
-    HTML("... Project Footer ... "),
+    HTML("Final Project | Madeleine Clarke, Allison Huang, Sean Kim, Ivy Li | INFO 201 | Autumn 2022 | "),
     hr()
   ),
 
