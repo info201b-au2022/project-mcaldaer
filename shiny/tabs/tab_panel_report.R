@@ -7,20 +7,8 @@ tab_panel_report <-tabPanel(
   "Report (not sure if we'll use this)",
 
   fluidRow(
-    column(
-      6,
-      includeMarkdown("tabs/report.md")
-    ),
-    column(
-      3,
-      p("This is a paragraph.")
-    ),
-    column(
-      3,
-      p("Rightmost column.")
+    includeMarkdown("tabs/p01-proposal copy.md")
     )
   )
 
-
-)
 

@@ -1,0 +1,13 @@
+name: a5application
+title: a5application
+username:
+account: mcaldaer
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 7822406
+bundleId: 6597483
+url: https://mcaldaer.shinyapps.io/a5application/
+when: 1670302256.03529
+lastSyncTime: 1670302256.03531
+asMultiple: FALSE
+asStatic: FALSE

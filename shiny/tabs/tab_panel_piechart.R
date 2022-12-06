@@ -4,7 +4,7 @@ library(shiny)
 
 type_input <- selectInput(
   "police_interaction_type", label = "Type of Interaction by Police",
-  choices = list(c("Police Terry Stops", "Officer-Involved Shooting", "Use of Force")),
+  choices = c("Police Terry Stops", "Officer-Involved Shooting", "Use of Force"),
   selected = "Police Terry Stops"
 )
 
