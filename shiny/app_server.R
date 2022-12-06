@@ -8,6 +8,7 @@
 #
 
 library(shiny)
+library(plotly)
 
 server <- function(input, output) {
     #Madeleine's server fxns here:
