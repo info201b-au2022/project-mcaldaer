@@ -74,7 +74,6 @@ pie_chart <- ggplot(data, aes (x="", y=value, fill=`Perceived Race`)) +
 pie_chart
 
 
-#####
 count_race_percentages <- data %>%
   mutate(total_subjects = sum(value)) %>%
   mutate(percentage = round((value / total_subjects * 100), 2))
@@ -119,4 +118,31 @@ count_shootings_race <- shootings %>%
   group_by(perceived_race) %>%
   summarize(value=n())
 View(count_shootings_race)
+
+
+count_race_percentages <- data %>%
+  mutate(total_subjects = sum(value)) %>%
+  mutate(percentage = round((value / total_subjects * 100), 2))
+
+# Create Data
+data2 <- count_race_percentages
+
+pie_chart_2 <- ggplot(data2, aes (x="", y=percentage, fill=`Perceived Race`)) +
+  geom_bar(stat="identity", width=1, color="white") +
+  coord_polar("y", start=0) +
+  
+  theme_void() # remove background, grid, numeric labels
+# theme(legend.position="none")
+
+pie_chart_2
+
+
+# plotly pie chart from: https://plotly.com/r/pie-charts/
+library(plotly)
+
+pie_chart_stops <- plot_ly(data2, labels = ~`Perceived Race`, values = ~percentage, type = 'pie')
+pie_chart_stops <- pie_chart_stops %>% layout(title = 'Police Terry Stops by Race',
+                                              xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+                                              yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+pie_chart_stops
 
