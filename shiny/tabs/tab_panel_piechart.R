@@ -1,6 +1,9 @@
 # tab_panel_chart2
 
 library(shiny)
+library("tidyverse")
+library(ggplot2)
+library(plotly)
 
 type_input <- selectInput(
   "police_interaction_type", label = "Type of Interaction by Police",
@@ -35,43 +38,6 @@ tab_panel_piechart <-tabPanel(
 )
 
 
-
-# tab_panel_piechart <-tabPanel(
-#     "Chart 2: Pie Chart",
-#     # h3("")
-#     p("This is where Allison's Pie Chart will be."),
-#     sidebarLayout(
-#       sidebarPanel(type_input)
-#     ),
-#     mainPanel(
-#       h3("Police Action on Civilians by Race in Seattle, WA"),
-#       plotOutput("piechart"),
-#       p("The purpose of the created pie chart is to display visually the 
-#       perceived races of the people that are stopped by police based on data 
-#       from the SPD, so that any disparities between the number of stops for 
-#       different races, as well as variances from the overall Seattle 
-#       demographics can be acknowledged. From the
-#       pie chart, it can be seen that people of the perceived race of White 
-#       is the group that is stopped the most by police. The second group of 
-#       people with the greatest number of stops would be people that belong 
-#       to the Black or African American race. The chart also displays numerous 
-#       other races and how much they are stopped in comparison to those of 
-#       other racial groups. The data from the chart can be used to compare 
-#       to overall Seattle demographics. For the White people, the groups seem 
-#       to correspond, with the group being the largest demographic in Seattle, 
-#       and also being the group that is stopped the most by police. However, 
-#       the contrast in some groups are significant. Specifically, it is 
-#       concerning how much greater, at 29.71% of Black people are 
-#       stopped by police, while they only compose of 7.06% of the population of
-#       the city of Seattle.")
-#       )
-# )
-
-
-
-library("tidyverse")
-library(ggplot2)
-library(plotly)
 
 # Load .csv data file on Terry Stops from the SPD
 terry_stops_data <- read.csv("https://raw.githubusercontent.com/info201b-au2022/project-mcaldaer/main/data/Terry_Stops.csv")
@@ -155,15 +121,6 @@ pie_chart_stops <- pie_chart_stops %>% layout(title = 'Police Terry Stops by Rac
                                               yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
 pie_chart_stops
 
-# 
-# pie_chart_stops <- plot_ly(data2, labels = ~`Perceived Race`, values = ~percentage, type = 'pie')
-# pie_chart_stops <- pie_chart_stops %>% layout(title = 'Police Terry Stops by Race',
-#                       xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
-#                       yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
-# pie_chart_stops
-
-
-
 
 # Load .csv data file on Officer Shootings from the SPD
 officer_shooting_data <- read.csv("https://raw.githubusercontent.com/info201b-au2022/project-mcaldaer/main/data/SPD_Officer_Involved_Shooting__OIS__Data.csv")
@@ -219,21 +176,5 @@ pie_chart_force <- pie_chart_force %>% layout(title = 'Officer Use of Force by R
                                                       xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
                                                       yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
 pie_chart_force
-
-
-
-server <- function(input, output) {
-  output$piechart <- renderPlotly({
-    data <- data2 %>%
-    plot <- plot_ly(data2, labels = ~`Perceived Race`, values = ~value, type = 'pie') %>%
-      layout(title = "Officer Involved Shootings by Race")
-    plot
-  })
-}
-
-
-
-
-
 
 
