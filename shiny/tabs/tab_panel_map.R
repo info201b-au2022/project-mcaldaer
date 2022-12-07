@@ -8,7 +8,7 @@ register_google(key = "AIzaSyA6IXtNTqQSNjxLG0vcFgct5eHOChp5MNw")
 # source("../../source/map.R")
 
 raw_OIS <- read.csv("https://raw.githubusercontent.com/info201b-au2022/project-mcaldaer/main/data/SPD_Officer_Involved_Shooting__OIS__Data.csv")
-View(raw_OIS)
+# View(raw_OIS)
 
 OIS <- raw_OIS %>% 
   filter(City == "Seattle") %>% 
@@ -32,8 +32,8 @@ tab_panel_map <-tabPanel(
     h3("Control the Appearance of the Map:"),
     sidebarLayout(
       sidebarPanel(radioButtons(inputId = "map_var", label = "Select Variable to Display",
-                                choices = list("Fatality" = 1, "Race of Subject" = 2, "Justification" = 3), 
-                                selected = 1),
+                                choices = c("Fatal", "Subject_Race", "Justified"), 
+                                selected = "Fatal"),
                    sliderInput(inputId = "date_range", label = "Choose Date Range", 
                                min = 2005, max = 2019, 
                                value = c(2005, 2019), sep = "")),
