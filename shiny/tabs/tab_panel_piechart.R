@@ -124,18 +124,18 @@ pie_chart_stops
 
 # Load .csv data file on Officer Shootings from the SPD
 officer_shooting_data <- read.csv("https://raw.githubusercontent.com/info201b-au2022/project-mcaldaer/main/data/SPD_Officer_Involved_Shooting__OIS__Data.csv")
-View(officer_shooting_data)
+# View(officer_shooting_data)
 
 # Filter data
 shootings <- officer_shooting_data %>%
   select(perceived_race = Subject.Race)
-View(shootings)
+# View(shootings)
 
 # Count number/value for each race
 count_shootings_race <- shootings %>%
   group_by(perceived_race) %>%
   summarize(value=n())
-View(count_shootings_race)
+# View(count_shootings_race)
 
 # Create Data
 data2 <- count_shootings_race %>%
@@ -152,23 +152,23 @@ pie_chart_shootings
 
 # Load .csv data file on Officer Shootings from the SPD
 use_of_force_data <- read.csv("https://raw.githubusercontent.com/info201b-au2022/project-mcaldaer/main/data/Use_Of_Force.csv")
-View(use_of_force_data)
+# View(use_of_force_data)
 
 # Filter data
 force <- use_of_force_data %>%
   select(perceived_race = Subject_Race)
-View(force)
+# View(force)
 
 # Count number/value for each race
 count_force_race <- force %>%
   group_by(perceived_race) %>%
   summarize(value=n())
-View(count_force_race)
+# View(count_force_race)
 
 # Create Data
 data3 <- count_force_race %>%
   rename("Perceived Race" = "perceived_race")
-View(data3)
+# View(data3)
 
 # plotly pie chart
 pie_chart_force <- plot_ly(data3, labels = ~`Perceived Race`, values = ~value, type = 'pie')
