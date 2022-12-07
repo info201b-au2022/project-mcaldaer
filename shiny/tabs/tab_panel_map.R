@@ -40,7 +40,6 @@ tab_panel_map <-tabPanel(
   
       mainPanel(
         h3("Plotting Officer Involved Shootings in Seattle, WA (2005-2019)"),
-        h1(em("**Imagine the Map is here**")),
         plotlyOutput(outputId = "map"), 
         p("This visualization seeks to geographically plot the most extreme form of police violence", 
         em("Officer Involved Shootings"), "This plot was included because it allows us to visualize where", 

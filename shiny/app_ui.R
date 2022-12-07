@@ -11,7 +11,7 @@ library(shiny)
 
 source("tabs/tab_panel_intro.R")
 source("tabs/tab_panel_barchart.R")
-source("tabs/tab_panel_piechart.R")
+#source("tabs/tab_panel_piechart.R")
 source("tabs/tab_panel_map.R")
 source("tabs/tab_panel_summary.R")
 source("tabs/tab_panel_report.R")
@@ -40,8 +40,8 @@ ui <- navbarPage(
   tab_panel_intro,
 
   # The three charts
-  tab_panel_barchart,
-  tab_panel_piechart,
+ tab_panel_barchart,
+ tab_panel_piechart,
   tab_panel_map,
 
   # The project summary

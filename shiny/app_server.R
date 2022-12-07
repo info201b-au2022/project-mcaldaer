@@ -1,21 +1,9 @@
-#
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
-
-library(shiny)
-library(plotly)
-library(patchwork)
 
 server <- function(input, output) {
-    #Madeleine's server fxns here:
+  #Madeleine's server fxns here:
   
   output$map <- renderPlotly({
-   
+    
     raw_OIS <- read.csv("https://raw.githubusercontent.com/info201b-au2022/project-mcaldaer/main/data/SPD_Officer_Involved_Shooting__OIS__Data.csv")
     
     Year <-  substring(raw_OIS$Date...Time, 7,10)
@@ -31,16 +19,14 @@ server <- function(input, output) {
     # View(OIS)
     
     seattle <- qmap("seattle", zoom = 11, source = "stamen", maptype = "toner")
-    
+
     ggplotly(seattle +
-             ggplot(data = OIS, aes(x = long, y = lat)) +
-      geom_point(mapping = aes(color = input$map_var))
-      )
-
+               geom_point(data = OIS, mapping = aes(x = long, y = lat, color = input$map_var))
+    )
   })
-
-
-   #Allison's server fxns here:
+  
+  
+  #Allison's server fxns here:
   
   plot1 <- reactive({
     # this should be a complete plot image,
@@ -72,11 +58,7 @@ server <- function(input, output) {
     graphInput()
   })
   
-   #Sean's server fxns here: 
+  #Sean's server fxns here: 
   
-  
-  
-  
+
 }
-
-
