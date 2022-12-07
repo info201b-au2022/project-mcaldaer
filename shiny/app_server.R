@@ -13,7 +13,7 @@ server <- function(input, output) {
     OIS <- raw_OIS %>% 
       filter(City == "Seattle") %>% 
       select(Longitude, Latitude, Year, Subject.Race, Fatal, Disposition) %>% 
-      rename(lat = Latitude, long = Longitude, race = Subject.Race, justified = Disposition) %>% 
+      rename(lat = Latitude, long = Longitude, Subject_Race = Subject.Race, Justified = Disposition) %>% 
       filter(Year <= max(input$date_range)) %>%
       filter(Year >= min(input$date_range))
     # View(OIS)
@@ -21,7 +21,8 @@ server <- function(input, output) {
     seattle <- qmap("seattle", zoom = 11, source = "stamen", maptype = "toner")
 
     ggplotly(seattle +
-               geom_point(data = OIS, mapping = aes(x = long, y = lat, color = input$map_var))
+               geom_point(data = OIS, mapping = aes_string(x = "long", y = "lat", color = input$map_var)) +
+               scale_color_brewer(palette = "Set2")
     )
   })
   
