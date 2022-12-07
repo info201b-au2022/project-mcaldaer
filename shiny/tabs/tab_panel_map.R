@@ -1,14 +1,37 @@
 # tab_panel_chart3
 
 library(shiny)
+library(ggmap)
+library(tidyverse)
+library(patchwork)
+register_google(key = "AIzaSyA6IXtNTqQSNjxLG0vcFgct5eHOChp5MNw")
 # source("../../source/map.R")
 
+raw_OIS <- read.csv("https://raw.githubusercontent.com/info201b-au2022/project-mcaldaer/main/data/SPD_Officer_Involved_Shooting__OIS__Data.csv")
+View(raw_OIS)
+
+OIS <- raw_OIS %>% 
+  filter(City == "Seattle") %>% 
+  select(Longitude, Latitude, Subject.Race, Fatal, Disposition) %>% 
+  rename(lat = Latitude, long = Longitude, Race = Subject.Race, Justified = Disposition)
+View(OIS)
+
+#here I am setting the parameters for the map layer 
+seattle <- qmap("seattle", zoom = 11, source = "stamen", maptype = "toner")
+seattle
+
+#creating generic labels 
+labels <- labs(
+  title = "Map of Officer Involved Shootings in Seattle, WA", 
+  subtitle = "Data from 2005-2019"
+)
+#here I can get a scatterplot of the longitude/latitude points by fatality
 
 tab_panel_map <-tabPanel(
     "Chart 3: Map",
     h3("Control the Appearance of the Map:"),
     sidebarLayout(
-      sidebarPanel(radioButtons("map", label = "Select Variable to Display",
+      sidebarPanel(radioButtons(inputId = "map_var", label = "Select Variable to Display",
                                 choices = list("Fatality" = 1, "Race of Subject" = 2, "Justification" = 3), 
                                 selected = 1),
                    sliderInput(inputId = "date_range", label = "Choose Date Range", 
@@ -18,7 +41,7 @@ tab_panel_map <-tabPanel(
       mainPanel(
         h3("Plotting Officer Involved Shootings in Seattle, WA (2005-2019)"),
         h1(em("**Imagine the Map is here**")),
-        plotOutput(outputId = "map"), 
+        plotlyOutput(outputId = "map"), 
         p("This visualization seeks to geographically plot the most extreme form of police violence", 
         em("Officer Involved Shootings"), "This plot was included because it allows us to visualize where", 
         "in Seattle shootings have occurred. While it would have been valuable to plot the geographical distribution",

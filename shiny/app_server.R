@@ -9,12 +9,37 @@
 
 library(shiny)
 library(plotly)
+library(patchwork)
 
 server <- function(input, output) {
     #Madeleine's server fxns here:
   
-  
-  
+  output$map <- renderPlotly({
+   
+    raw_OIS <- read.csv("https://raw.githubusercontent.com/info201b-au2022/project-mcaldaer/main/data/SPD_Officer_Involved_Shooting__OIS__Data.csv")
+    
+    Year <-  substring(raw_OIS$Date...Time, 7,10)
+    
+    raw_OIS$Year <- Year
+    
+    OIS <- raw_OIS %>% 
+      filter(City == "Seattle") %>% 
+      select(Longitude, Latitude, Year, Subject.Race, Fatal, Disposition) %>% 
+      rename(lat = Latitude, long = Longitude, race = Subject.Race, justified = Disposition) %>% 
+      filter(Year <= max(input$date_range)) %>%
+      filter(Year >= min(input$date_range))
+    # View(OIS)
+    
+    seattle <- qmap("seattle", zoom = 11, source = "stamen", maptype = "toner")
+    
+    ggplotly(seattle +
+             ggplot(data = OIS, aes(x = long, y = lat)) +
+      geom_point(mapping = aes(color = input$map_var))
+      )
+
+  })
+
+
    #Allison's server fxns here:
   
   plot1 <- reactive({
@@ -48,6 +73,10 @@ server <- function(input, output) {
   })
   
    #Sean's server fxns here: 
+  
+  
+  
+  
 }
 
 
