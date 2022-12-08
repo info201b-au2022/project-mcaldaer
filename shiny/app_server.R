@@ -63,7 +63,11 @@ server <- function(input, output) {
   #Sean's server fxns here: 
   
   output$barchart <- renderPlot({
-    ggplot(UOF %>% filter(Incident_Type == input$type), aes(x = Subject_Race)) +
+    
+    df <- UOF %>% 
+      filter(Incident_Type == input$type)
+    
+    ggplot(df, aes(x = Subject_Race)) +
       geom_bar(stat = "count") +
       labs(title = paste0("Race Involved in " + input$type), x = "Subject Race", y = "Count") +
       coord_flip()
