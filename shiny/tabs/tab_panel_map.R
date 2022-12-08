@@ -14,7 +14,7 @@ OIS <- raw_OIS %>%
   filter(City == "Seattle") %>% 
   select(Longitude, Latitude, Subject.Race, Fatal, Disposition) %>% 
   rename(lat = Latitude, long = Longitude, Race = Subject.Race, Justified = Disposition)
-View(OIS)
+# View(OIS)
 
 #here I am setting the parameters for the map layer 
 seattle <- qmap("seattle", zoom = 11, source = "stamen", maptype = "toner")

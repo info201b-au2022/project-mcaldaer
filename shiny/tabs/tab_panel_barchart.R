@@ -1,9 +1,15 @@
 # tab_panel_chart1
 
 library(shiny)
+library(ggplot2)
+library(dplyr)
+
+UOF <- read.csv("https://raw.githubusercontent.com/info201b-au2022/project-mcaldaer/main/data/Use_Of_Force.csv")
 
 tab_panel_barchart <-tabPanel(
     "Chart 1: Bar Chart",
-    p("This is where Sean's barchart will be.")
+    selectInput("type", label = "Incident Type", choices = c("Level 1 - Use of Force", "Level 2 - Use of Force", "Level 3 - Use of Force", "Level 3 - OIS")),
+    plotOutput("barchart"),
+    hr(),
+    p("Summary")
 )
-
