@@ -12,12 +12,7 @@ type_input <- selectInput(
 )
 
 tab_panel_piechart <-tabPanel(
-<<<<<<< HEAD
   "Police Interactions",
-  p("This is where Allison's Pie Chart will be."),
-=======
-  "Chart 2: Pie Chart",
->>>>>>> 322c3196a8a26629339bb1d2cdfae55ce6d08c39
   h2("Police Action on Civilians by Race in Seattle, WA"),
   type_input,
   plotlyOutput("piechart"),
