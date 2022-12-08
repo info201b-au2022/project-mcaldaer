@@ -12,8 +12,12 @@ type_input <- selectInput(
 )
 
 tab_panel_piechart <-tabPanel(
+<<<<<<< HEAD
   "Police Interactions",
   p("This is where Allison's Pie Chart will be."),
+=======
+  "Chart 2: Pie Chart",
+>>>>>>> 322c3196a8a26629339bb1d2cdfae55ce6d08c39
   h2("Police Action on Civilians by Race in Seattle, WA"),
   type_input,
   plotlyOutput("piechart"),
@@ -30,11 +34,15 @@ tab_panel_piechart <-tabPanel(
   other racial groups. The data from the chart can be used to compare 
   to overall Seattle demographics. For the White people, the groups seem 
   to correspond, with the group being the largest demographic in Seattle, 
-  and also being the group that is stopped the most by police. However, 
+  and also being the group that recieves the most interactions from the
+  police regardless of the type of interaction. However, 
   the contrast in some groups are significant. Specifically, it is 
-  concerning how much greater, at 29.71% of Black people are 
-  stopped by police, while they only compose of 7.06% of the population of
-  the city of Seattle.")
+  concerning how much greater, at 29.71% of Black people being 
+  stopped by police all the way up to 36.1% of Black people encountering
+  use of force by officers, while they only compose of 7.06% of the population of
+  the city of Seattle. Overall, the displayed data is very useful in helping
+    people gain insight on the differences in amounts of police interactions
+    that people of different racial groups face and receive.")
 )
 
 
