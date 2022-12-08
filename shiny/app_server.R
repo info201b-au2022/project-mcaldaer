@@ -62,14 +62,16 @@ server <- function(input, output) {
   
   #Sean's server fxns here: 
   
-  output$barchart <- renderPlot({
+  output$barchart <- renderPlotly({
     
     df <- UOF %>% 
       filter(Incident_Type == input$type)
     
-    ggplot(df, aes(x = Subject_Race)) +
-      geom_bar(stat = "count") +
-      labs(title = paste0("Race Involved in " + input$type), x = "Subject Race", y = "Count") +
-      coord_flip()
+    ggplotly(ggplot(df, aes(x = Subject_Race)) +
+      geom_bar() +
+      scale_color_brewer(palette = "Set2") +
+      labs(title = paste0("Race Involved in ", input$type), x = "Subject Race", y = "Count") +
+      coord_flip() 
+    )
   })
 }
