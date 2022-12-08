@@ -7,26 +7,6 @@ library(patchwork)
 register_google(key = "AIzaSyA6IXtNTqQSNjxLG0vcFgct5eHOChp5MNw")
 # source("../../source/map.R")
 
-raw_OIS <- read.csv("https://raw.githubusercontent.com/info201b-au2022/project-mcaldaer/main/data/SPD_Officer_Involved_Shooting__OIS__Data.csv")
-# View(raw_OIS)
-
-OIS <- raw_OIS %>% 
-  filter(City == "Seattle") %>% 
-  select(Longitude, Latitude, Subject.Race, Fatal, Disposition) %>% 
-  rename(lat = Latitude, long = Longitude, Race = Subject.Race, Justified = Disposition)
-# View(OIS)
-
-#here I am setting the parameters for the map layer 
-seattle <- qmap("seattle", zoom = 11, source = "stamen", maptype = "toner")
-seattle
-
-#creating generic labels 
-labels <- labs(
-  title = "Map of Officer Involved Shootings in Seattle, WA", 
-  subtitle = "Data from 2005-2019"
-)
-#here I can get a scatterplot of the longitude/latitude points by fatality
-
 tab_panel_map <-tabPanel(
     "Mapping Police Shootings",
     h3("Control the Appearance of the Map:"),

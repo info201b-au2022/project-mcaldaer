@@ -73,17 +73,13 @@ tab_panel_intro <-tabPanel(
     p("Each dataset contains varying amounts of data from varying timeframes. The Terry Stops and Use-of-Force datasets continue to be updated, however 
       the Officer Involved Shootings set has not been updated since August of 2020. Some records within each set are incomplete, and thus could be missing 
       key features like the date the incident occurred or the race of the subject involved. While officers may be required to engage in some sort of internal 
-      validation process, there is no publicly available description surrounding the validation of the represented data.")
+      validation process, there is no publicly available description surrounding the validation of the represented data."), 
+    h5(strong("General demographics in Seattle:")),
+    p("White: 65.81%"),
+    p("Asian: 16.31%"),
+    p("Two or more races: 7.64%"),
+    p("Black or African American: 7.06%"),
+    p("Other race: 2.38%"),
+    p("Native American: 0.54%"),
+    p("Native Hawaiian or Pacific Islander: 0.26%")
 )
-
-
-# h5(strong("General demographics in Seattle:")),
-# p("White: 65.81%"),
-# p("Asian: 16.31%"),
-# p("Two or more races: 7.64%"),
-# p("Black or African American: 7.06%"),
-# p("Other race: 2.38%"),
-# p("Native American: 0.54%"),
-# p("Native Hawaiian or Pacific Islander: 0.26%"),
-# p(em("The data is from: https://worldpopulationreview.com/us-cities/seattle-wa-population")),
-# 

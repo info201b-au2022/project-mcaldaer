@@ -69,7 +69,7 @@ server <- function(input, output) {
       filter(Incident_Type == input$type)
     
     ggplotly(ggplot(df, aes(x = Subject_Race)) +
-      geom_bar(fill = "#009969") +
+      geom_bar(fill = "#0c2d6a") +
       labs(title = paste0("Race Involved in ", input$type), x = "Subject Race", y = "Count") +
       coord_flip() 
     )
