@@ -24,8 +24,50 @@ tab_panel_summary <-tabPanel(
       The distribution of police interactions in Seattle does not align with the general demographics, as there was absence of shootings in some of the wealthier neighborhoods in the city. 
       "),
     h3(em("Discussion: Implications & Limitations")),
-    p("Consider recycling info in the implications & limitations section"),
-    p("Allison's discussion will go here"),
+    p("The data from the Seattle Police Department is significant as it consists
+      of various types of interactions that officers have with civilians, and 
+      the patterns that have been revealed are helpful for understanding which 
+      groups of people are disproportionately affected. Furthermore, those trends
+      will then be helpful for policymakers and officials to implement new policies 
+      and plans that will help create greater equality of treatment by police 
+      officers toward the civilians. Analyzing the datasets, it is clear that 
+      there are different treatments against people of different backgrounds. 
+      For example, people of certain racial groups receive interactions from 
+      the police, regardless of which type of interaction it is (police terry 
+      stops, officer-involved shooting, uses of force), 
+      much more than people of other backgrounds. Specifically, 
+      in these datasets, it would be the White people and Black people. 
+      However, it is important to note the differences in these two pieces 
+      of data, as the White people being the most corresponds to the general
+      demographics; on the other hand, for the Black people, their percentage 
+      of them facing police interactions is much greater than that of the 
+      percentage in the general demographics. With such revealing disparities
+      in treatments toward people of different backgrounds, this could also 
+      mean that there are trends in how officers within the Seattle Police 
+      Department operate on their job, and could be of concern and if 
+      necessary, would need to be looked into or have new policies created 
+      so that they perform with less bias towards different groups of people. 
+      The geographical distributions of the data is also notable, as it 
+      reveals potential connections to other factors of each neighborhood 
+      and community, including racial factors and if the interactions by 
+      the police were justified, and could help researchers and policymakers 
+      alike focus on what policies should be put into place in order to 
+      lessen interactions in areas that have much more occurrences than 
+      other places."),
+    p("Overall, the data from the Seattle Police Department is very 
+      helpful and reveals many noticeable trends that can be looked into 
+      in order to create more equality in regards to police interactions with 
+      civilians in the city of Seattle, WA. Although the datasets include many 
+      variables and is quite complex so good analysis can be performed on them, 
+      a limitation of the dataset is that much of it is self-reported by the 
+      officers of the SPD themselves, which can lead to issues of bias. 
+      As the datasets chosen focus on interactions that occur in Seattle,
+      it would be interesting to compare the findings with other cities 
+      and locations, and even on a larger scale of the entire country, 
+      as there would be more implications that arise. Those trends, 
+      then can once again, help with the creation of new policies to 
+      reduce bias and increase equality in police interactions with 
+      civilians of different backgrounds."),
     h3(em("Conclusion")),
     p("Madeleine's conclusion will go here"), 
     h3(em("Acknowledgments")),
