@@ -76,81 +76,26 @@ count_race_2 <- stops %>%
   slice(-c(1, 5, 10)) # delete rows: https://www.datasciencemadesimple.com/delete-or-drop-rows-in-r-with-conditions-2/
 
 
-# info from r-graph-gallery website: https://r-graph-gallery.com/piechart-ggplot2.html
-
-# CREATING THE PIE CHART
-
-
 # Create Data
 data <- count_race_2 %>%
   rename("Perceived Race" = "perceived_race")
 
-# 
-# # Basic piechart
-# pie_chart <- ggplot(data, aes (x="", y=value, fill=`Perceived Race`)) +
-#   geom_bar(stat="identity", width=1, color="white") +
-#   coord_polar("y", start=0) +
-#   
-#   theme_void() # remove background, grid, numeric labels
-# # theme(legend.position="none")
-# 
-# pie_chart
-
-
-# 
-# # Create Data
-# count_race_percentages <- data %>%
-#   mutate(total_subjects = sum(value)) %>%
-#   mutate(percentage = round((value / total_subjects * 100), 2))
-# 
-# data2 <- count_race_percentages
-# 
-# pie_chart_2 <- ggplot(data2, aes (x="", y=percentage, fill=`Perceived Race`)) +
-#   geom_bar(stat="identity", width=1, color="white") +
-#   coord_polar("y", start=0) +
-#   
-#   theme_void() # remove background, grid, numeric labels
-# # theme(legend.position="none")
-# 
-# pie_chart_2
-# 
-# # NOTE: PIE CHART 1 AND 2 ARE BASICALLY SAME EXCEPT 2 LABELS WITH %'S !
-# 
-
-# plotly pie chart from: https://plotly.com/r/pie-charts/
-pie_chart_stops <- plot_ly(data, labels = ~`Perceived Race`, values = ~value, type = 'pie')
-pie_chart_stops <- pie_chart_stops %>% layout(title = 'Police Terry Stops by Race',
-                                              xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
-                                              yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
-pie_chart_stops
-
 
 # Load .csv data file on Officer Shootings from the SPD
 officer_shooting_data <- read.csv("https://raw.githubusercontent.com/info201b-au2022/project-mcaldaer/main/data/SPD_Officer_Involved_Shooting__OIS__Data.csv")
-# View(officer_shooting_data)
 
 # Filter data
 shootings <- officer_shooting_data %>%
   select(perceived_race = Subject.Race)
-# View(shootings)
 
 # Count number/value for each race
 count_shootings_race <- shootings %>%
   group_by(perceived_race) %>%
   summarize(value=n())
-# View(count_shootings_race)
 
 # Create Data
 data2 <- count_shootings_race %>%
   rename("Perceived Race" = "perceived_race")
-
-# plotly pie chart
-pie_chart_shootings <- plot_ly(data2, labels = ~`Perceived Race`, values = ~value, type = 'pie')
-pie_chart_shootings <- pie_chart_shootings %>% layout(title = 'Officer Involved Shootings by Race',
-                                              xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
-                                              yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
-pie_chart_shootings
-
 
 
 # Load .csv data file on Officer Shootings from the SPD
@@ -160,24 +105,14 @@ use_of_force_data <- read.csv("https://raw.githubusercontent.com/info201b-au2022
 # Filter data
 force <- use_of_force_data %>%
   select(perceived_race = Subject_Race)
-# View(force)
 
 # Count number/value for each race
 count_force_race <- force %>%
   group_by(perceived_race) %>%
   summarize(value=n())
-# View(count_force_race)
 
 # Create Data
 data3 <- count_force_race %>%
   rename("Perceived Race" = "perceived_race")
-# View(data3)
-
-# plotly pie chart
-pie_chart_force <- plot_ly(data3, labels = ~`Perceived Race`, values = ~value, type = 'pie')
-pie_chart_force <- pie_chart_force %>% layout(title = 'Officer Use of Force by Race',
-                                                      xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
-                                                      yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
-pie_chart_force
 
 
