@@ -12,7 +12,7 @@ type_input <- selectInput(
 )
 
 tab_panel_piechart <-tabPanel(
-  "Chart 2: Pie Chart",
+  "Police Interactions",
   p("This is where Allison's Pie Chart will be."),
   h2("Police Action on Civilians by Race in Seattle, WA"),
   type_input,

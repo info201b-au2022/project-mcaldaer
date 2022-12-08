@@ -40,13 +40,12 @@ ui <- navbarPage(
   tab_panel_intro,
 
   # The three charts
-  tab_panel_barchart,
   tab_panel_piechart,
+  tab_panel_barchart,
   tab_panel_map,
 
   # The project summary
-  tab_panel_summary,
-
+  tab_panel_summary
   # The project report
-  tab_panel_report
+  # tab_panel_report
 )

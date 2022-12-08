@@ -28,7 +28,7 @@ labels <- labs(
 #here I can get a scatterplot of the longitude/latitude points by fatality
 
 tab_panel_map <-tabPanel(
-    "Chart 3: Map",
+    "Mapping Police Shootings",
     h3("Control the Appearance of the Map:"),
     sidebarLayout(
       sidebarPanel(radioButtons(inputId = "map_var", label = "Select Variable to Display",
@@ -42,7 +42,7 @@ tab_panel_map <-tabPanel(
         h3("Plotting Officer Involved Shootings in Seattle, WA (2005-2019)"),
         plotlyOutput(outputId = "map"), 
         p("This visualization seeks to geographically plot the most extreme form of police violence", 
-        em("Officer Involved Shootings"), "This plot was included because it allows us to visualize where", 
+        em("Officer Involved Shootings."), "This plot was included because it allows us to visualize where", 
         "in Seattle shootings have occurred. While it would have been valuable to plot the geographical distribution",
         "of all the of the interactions we are analyzing (Terry Stops and Use of Force, too), the Officer Involved", 
         "Shootings (OIS) dataset was the only set that included detailed location data. The longitude and latitude", 
@@ -50,11 +50,12 @@ tab_panel_map <-tabPanel(
         
         p("By plotting these 156 instances of OIS on a map of Seattle, one can observe that a large cluster of",
           "shootings occurred in the city center, in Downtown Seattle and the surrounding areas. One can also", 
-          "observe the noticeable absence of shootings in North Seattle neighborhoods like Ballard, Fremont,", 
+          "observe an absence of shootings in North Seattle neighborhoods like Ballard, Fremont,", 
           "Magnolia and Queen Anne as well as the neighborhood of Madison Park. Perhaps unsurprisingly, these", 
-          "are some of the wealthier (and whiter) neighborhoods in the city. The color of the dots on each", 
-          "respective map indicate fatality, or the race of the subject. While the map is useful for understanding",
-          "the geographical distribution of shootings, these sub-trends are more easily understood by summary statistics,", 
+          "are some of the wealthier (and whiter) neighborhoods in the city. Interacting with the widgets allows users to", 
+          "adjust the date range of the data presented, as well as change what the color of the data points represent.", 
+          "The color of the dots on the map indicate either fatality, the race of the subject, or whether the shooting was justified. 
+          While the map is useful for understanding the geographical distribution of shootings, these sub-trends are more easily understood by summary statistics,", 
           "or a different type of visualization."))
         
       )

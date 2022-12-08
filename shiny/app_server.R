@@ -1,4 +1,5 @@
 library(ggplot2)
+library(shiny)
 
 server <- function(input, output) {
   #Madeleine's server fxns here:
@@ -68,8 +69,7 @@ server <- function(input, output) {
       filter(Incident_Type == input$type)
     
     ggplotly(ggplot(df, aes(x = Subject_Race)) +
-      geom_bar() +
-      scale_color_brewer(palette = "Set2") +
+      geom_bar(fill = "#009969") +
       labs(title = paste0("Race Involved in ", input$type), x = "Subject Race", y = "Count") +
       coord_flip() 
     )
